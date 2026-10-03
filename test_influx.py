@@ -4,10 +4,18 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 # ============================================================
 # INFLUXDB SETTINGS
 # ============================================================
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 INFLUX_URL = "http://localhost:8086"
 
-INFLUX_TOKEN = "uSbZddWqcOenMhgYrif6c3FHAG3dgQMCzR7Tz29PHvXlB-5KQ5aj5e8XrEkTH7hKXX-quXMT4jRHszJ_XwJyng=="
+INFLUX_TOKEN = os.getenv("INFLUX_TOKEN")
+
+if not INFLUX_TOKEN:
+    raise RuntimeError("INFLUX_TOKEN is not set in .env")
 
 INFLUX_ORG = "my-org"
 
