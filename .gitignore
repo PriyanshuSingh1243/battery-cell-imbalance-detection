@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+*.secret
+
+# InfluxDB / MQTT credentials
+secrets/
+credentials/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
